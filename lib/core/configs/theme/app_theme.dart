@@ -7,11 +7,13 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.lightBackground,
     brightness: Brightness.light,
     fontFamily: 'Satoshi',
+    textSelectionTheme: const TextSelectionThemeData(cursorColor: Color(0xff383838)),
     sliderTheme: SliderThemeData(overlayShape: SliderComponentShape.noOverlay),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: Colors.transparent,
       contentPadding: const EdgeInsets.all(30),
+
       hintStyle: const TextStyle(
         color: Color(0xff383838),
         fontWeight: FontWeight.w500,
@@ -22,7 +24,11 @@ class AppTheme {
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30),
-        borderSide: const BorderSide(color: Colors.black, width: 0.4),
+        borderSide: const BorderSide(color: Colors.black, width: 0.8),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30),
+        borderSide: const BorderSide(color: AppColors.primary, width: 0.4),
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -44,11 +50,12 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.darkBackground,
     brightness: Brightness.dark,
     fontFamily: 'Satoshi',
+    textSelectionTheme: const TextSelectionThemeData(cursorColor:  Color(0xffA7A7A7)),
     sliderTheme: SliderThemeData(
       overlayShape: SliderComponentShape.noOverlay,
-      activeTrackColor: Color(0xffB7B7B7),
+      activeTrackColor: const Color(0xffB7B7B7),
       inactiveTrackColor: Colors.grey.withOpacity(0.3),
-      thumbColor: Color(0xffB7B7B7),
+      thumbColor: const Color(0xffB7B7B7),
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
@@ -65,6 +72,10 @@ class AppTheme {
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30),
         borderSide: const BorderSide(color: Colors.white, width: 0.4),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30),
+        borderSide: const BorderSide(color: AppColors.primary, width: 0.4),
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
