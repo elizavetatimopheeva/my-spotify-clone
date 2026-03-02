@@ -6,12 +6,16 @@ class SongModel {
    String? artist;
    num? duration;
    Timestamp? releaseDate;
+   bool? isFavorite;
+   String? songId;
 
   SongModel({
     required this.title,
     required this.artist,
     required this.duration,
     required this.releaseDate,
+    required this.isFavorite,
+    required this.songId,
   });
 
 
@@ -30,6 +34,8 @@ extension SongModelX on SongModel{
     title: title!, 
     artist: artist!, 
     duration: duration!, 
-    releaseDate: releaseDate!);
+    releaseDate: releaseDate!,
+    isFavorite: isFavorite!,
+    songId: songId!);
  }
 }

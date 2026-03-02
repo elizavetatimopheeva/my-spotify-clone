@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:spotify/common/bloc/favorite_button/favorite_button_cubit.dart';
 import 'package:spotify/common/helpers/is_dark_mode.dart';
 import 'package:spotify/common/widgets/appbar/appbar.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart';
 import 'package:spotify/presentation/home/widgets/news_songs.dart';
+import 'package:spotify/presentation/home/widgets/play_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -37,19 +40,22 @@ class _HomePageState extends State<HomePage>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _homeTopCard(),
-             _tabs(),
-             SizedBox(
+            _tabs(),
+            SizedBox(
               height: 260,
-               child: TabBarView(
+              child: TabBarView(
                 controller: _tabController,
                 children: [
-                const NewsSongs(),
-                Container(),
-                Container(),
-                Container(),
-               ],),
-             )
-             ],
+                  const NewsSongs(),
+                  Container(),
+                  Container(),
+                  Container(),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            const PlayList(),
+          ],
         ),
       ),
     );
