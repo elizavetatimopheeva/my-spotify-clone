@@ -5,22 +5,27 @@ import 'package:spotify/service_locator.dart';
 
 class SongRepositoryImpl extends SongsRepository {
   @override
-  Future<Either> getNewsSongs()async {
+  Future<Either> getNewsSongs() async {
     return await sl<SongFirebaseService>().getNewsSongs();
   }
-  
+
   @override
-  Future<Either> getPlayList() async{
-     return await sl<SongFirebaseService>().getPlayList();
+  Future<Either> getPlayList() async {
+    return await sl<SongFirebaseService>().getPlayList();
   }
-  
+
   @override
   Future<Either<dynamic, dynamic>> addOrRemoveFavorite(String songId) async {
-  return await sl<SongFirebaseService>().addOrRemoveFavoriteSong(songId);
+    return await sl<SongFirebaseService>().addOrRemoveFavoriteSong(songId);
   }
-  
+
   @override
-  Future<bool> isFavoriteSong(String songId) async{
-   return await sl<SongFirebaseService>().isFavoriteSong(songId);
+  Future<bool> isFavoriteSong(String songId) async {
+    return await sl<SongFirebaseService>().isFavoriteSong(songId);
+  }
+
+  @override
+  Future<Either<dynamic, dynamic>> getUserFavoriteSongs() async {
+    return await sl<SongFirebaseService>().getUserFavoriteSongs();
   }
 }

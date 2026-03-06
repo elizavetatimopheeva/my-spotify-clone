@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spotify/common/helpers/format_utils.dart';
 import 'package:spotify/common/helpers/is_dark_mode.dart';
 import 'package:spotify/common/widgets/favorite_button/favorite_button.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart';
@@ -126,9 +127,13 @@ class PlayList extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(songs[index].duration.toString().replaceAll('.', ':')),
+                  Text(
+                    FormatUtils.durationToMinutesSeconds(
+                      songs[index].duration,
+                    ).toString().replaceAll('.', ':'),
+                  ),
 
-                  FavoriteButton(song: songs[index],),
+                  FavoriteButton(song: songs[index]),
                 ],
               ),
             ],
