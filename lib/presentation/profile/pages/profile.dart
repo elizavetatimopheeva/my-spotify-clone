@@ -162,13 +162,15 @@ class ProfilePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(width: 20),
+                                  const SizedBox(width: 10),
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
                                         state.favoriteSongs[index].title,
                                         style: const TextStyle(
                                           fontWeight: FontWeight.bold,
@@ -177,6 +179,8 @@ class ProfilePage extends StatelessWidget {
                                       ),
                                       const SizedBox(height: 5),
                                       Text(
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
                                         state.favoriteSongs[index].artist,
                                         style: const TextStyle(
                                           fontWeight: FontWeight.w400,
@@ -189,13 +193,14 @@ class ProfilePage extends StatelessWidget {
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
+
                                 children: [
                                   Text(
                                     FormatUtils.durationToMinutesSeconds(
                                       state.favoriteSongs[index].duration,
                                     ).toString().replaceAll('.', ':'),
                                   ),
-                                  const SizedBox(width: 10),
+
                                   FavoriteButton(
                                     song: state.favoriteSongs[index],
                                     key: UniqueKey(), //?????
