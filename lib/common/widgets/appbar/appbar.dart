@@ -24,7 +24,6 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
           Navigator.pop(context);
         },
         icon: Container(
-          // padding: EdgeInsets.all(10),
           height: 32,
           width: 32,
           decoration: BoxDecoration(
@@ -46,6 +45,5 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
