@@ -1,7 +1,3 @@
-# spotify
+# spotify-clone
 
-A new Flutter project.
-
-## Getting Started
-
-https://github.com/user-attachments/assets/67da5466-2d87-44e2-89bc-0f1d2542b54e
+![Image](https://github.com/user-attachments/assets/2a7b9c9d-fffc-4fc9-b1ea-3bed1a7ef893)
